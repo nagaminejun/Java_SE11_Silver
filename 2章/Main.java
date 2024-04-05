@@ -15,6 +15,11 @@ public class Main {
     // System.out.println(sb); // eaba
 
 
+    // 2-20
+    // StringBuilder sb = new StringBuilder("abcde");
+    // System.out.println(sb.length());
+    // System.out.println(sb.capacity());
+
     // 2-19
     // String str = null;
     // System.out.println(str);
@@ -72,7 +77,7 @@ public class Main {
     // 2-11 charAt チャーアットメソッド
     // String str = "abcde";
     // System.out.println(str.charAt(5)); // 引数は０から
-    // 結果
+    // 結果 コンパイルは成功するよ！実行時エラー発生！
     // Exception in thread "main" java.lang.StringIndexOutOfBoundsException: Index 5 out of bounds for length 5
 
 
@@ -87,30 +92,50 @@ public class Main {
     // nagaminejun@nagaminejunnoMacBook-Air 2章 % java Main      
     // hoge banana hoge orange
 
-    // 2-10
-    // String str = "java";
-    // hello(str);
+    // 2-10 Stringオブジェクトは不変
+    // privateメソッドは最下部へ
+    // String str = "hoge, world.";
+    // hello(str); // helloメソッド(voidではない)で新規作成されたオブジェクトを受け取り、下記で出力するには「再代入処理」が必要。例：str = hello(str);
+    //  // str = hello(str);
     // System.out.println(str);
 
-    // 2-9
-    // String c = String.newInstance('a');
-    // String d = String.valueOf(12345);
-    // System.out.println(d + 1);
+    // 試した、もしhello, world.の出力に変えたい場合は、privateメソッドの２を試す
+    // String str2 = "hoge, world.";
+    // str2 = hello(str2);
+    // System.out.println(str2);
+
+    // 2-9 valueOfメソッドの使い方覚えて
+    // String c = String.newInstance('a'); // 
+    // String b = "sample";
+    // // String d = String.valueOf('sample');
+    // String e = String.valueOf(12345); // 文字列へ変換
+    // System.out.println(e + 1);
+    // char[] chars = {'h', 'e', 'l', 'l', 'o'};
+    // String f = String.valueOf(chars);
+    // System.out.println(f);
 
 
     // 2-8
     // var a = new B();
     // a = new C();
     // a.test();
+    // 結果
+    // 2章/Main.java:103: エラー: 不適合な型: CをBに変換できません:
+    //     a = new C();
+    //         ^
+    // エラー1個
+
+    // 2-7
+    // var name = "";
+    // var price = 0;
 
     // 2-1
-    // 無限ループ気をつけて
     // int val = 7;
     // bool flg = true;
     // if (flg == true) {
     //   do {
     //     System.out.println(val);
-    //   } while (val > 10 && val < 10);
+    //   } while (val > 10);
     // }
 
     // 2-2
@@ -131,16 +156,16 @@ public class Main {
     // 16進数: 「0x」で始まります。
     // 2進数: 「0b」で始まります。
 
-    // 2-3
+    // 2-3 アンダースコアのルール覚えて
     // int a = 123_456_789;
     // int b = 5______2;
-    // int c = _123_456_789; ×
-    // int d = 123_456_789_; ×
-    // float e = 3_.1415F; ×
-    // int f = 999_99_999L; ×
+    // int c = _123_456_789; // ×
+    // int d = 123_456_789_; // ×
+    // float e = 3_.1415F; // ×
+    // int f = 999_99_999L; // ×
     // byte g = 0b0_1;
     // int h = 0.52;
-    // int i = 0x_52; ×
+    // int i = 0x_52; // ×
 
     // 2-4 コンパイルエラーになるものは？
     // char a = "a";// ×
@@ -150,6 +175,7 @@ public class Main {
     // char d = null;// ×
     // System.out.println(c); //出力結果 Y 理由:Unicodeの値89
 
+    // 試した
     // char e = 'a'; //
     // char f = '\u0061'; // Unicodeも可能
     // char g = 65536; × // 65535までならコンパイル可能、それ以上は不可
@@ -166,6 +192,11 @@ public class Main {
     // int 1a = 10; ×
     // int ¥ = 11;
     // int $d = 22;
+    // inta _ = 11; // ×
+    // int int = 11; // ×
+    // int ¥.a = 11; // ×
+    // int ¥() = 11; // ×
+    // int ¥{} = 11; // ×
 
     // System.out.println($);
 
@@ -175,9 +206,27 @@ public class Main {
     // var c = () -> {};
     // var d = {1, 2, 3}; // 適切な記述例は var d = new int[]{1, 2, 3}; 配列型の明示必要
     // var f = new ArrayList<>(); // <>がなければ、コンパイラがObject型をダイヤモンド演算子<>に代入する new ArrayList<Object>()
+
+    // 試した
+    // var a = 1;
     
   }
+  // 2-10 
+  private static void hello(String msg) {
+    msg.replaceAll("hoge", "hello"); // ここで代入処理をしないと、書き換えられたオブジェクトを参照できない。例：msg = msg.replaceAll("hoge", "hello");
+    System.out.println(msg); // 再代入処理がされているなら、出力はhello, world.
+    // ここではmagという新規オブジェクトが生成されているが、再代入処理されていないため、結果はhoge, world.
+  }
+
+  // 2-10 試した①
+  // private static String hello(String msg) { // void(戻り値を返す)を削除、メソッドの型指定も追加
+  //   return msg.replaceAll("hoge", "hello"); // return文も必要、
+  // }
+
+  // 2-10 試した② メソッド内の新しいオブジェクトは、修正された文字列を表示できる。
   // private static void hello(String msg) {
-  //   msg.replaceAll("hoge1 ", "hoge2");
+  //   String msg2 =  msg.replaceAll("hoge", "hello");
+  //   System.out.println(msg2);
+  //   // 結果、hello, world.
   // }
 }

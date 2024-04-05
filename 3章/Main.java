@@ -1,7 +1,7 @@
 // mainメソッドのブロック外部にenum Day定義あり。最下部に
 public class Main {
   public static void main(String[] args) {
-    // System.out.println();
+    System.out.println();
 
 
     // 3-21
@@ -53,7 +53,8 @@ public class Main {
     //     break;
     // }
     // 答え case "10":とcase num:
-    // 解説：switch引数のnumはint型であり、case値も型を合わせる必要ある。case値に変数は使用不可。
+    // 解説：switch引数のnumはint型であり、case値も型を合わせる必要ある。
+    // 重要：「case値に変数は使用不可。」
     // Main.java:11: エラー: 不適合な型: Stringをintに変換できません:
     //   case "10":
     //        ^
