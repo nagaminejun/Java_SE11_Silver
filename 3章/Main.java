@@ -207,15 +207,25 @@ public class Main {
     // 3-9 equalsメソッドのオーバーライド
     // Sample a = new Sample(10, "a");
     // Sample b = new Sample(10, "b");
-    // System.out.println(a.equals(b));
+    // System.out.print(a == b);
+    // System.out.println(" (a == b)の結果");
+    // System.out.print(a.equals(b));
+    // equalsメソッドのデフォルトでは、this.equals(obj)
 
     // 3-8 
+    // 適切なディレクトリで実行して。
     // Sample s1 = new Sample(10); //Sample@6b95977
     // Sample s2 = s1; // Sample@7344699f
+    // String a1 = "10";
+    // String a2 = "10";
     // s1 = new Sample(10); // 新規オブジェクトです。最初の行とは別オブジェクト Sample@7344699f
-    // System.out.println(s1);
+    // System.out.println(s1.toString());
     // System.out.println(s2);
     // System.out.println(s1 == s2);
+    // // 試した
+    // System.out.println(s1.equals(s2));
+    // System.out.println(a1 == a2);
+    // System.out.println(a1.equals(a2));
 
     // 3-7
     // int a = 100, b = 20, c = 30;
@@ -254,6 +264,16 @@ public class Main {
     // System.out.println(f); // 結果 11
     // System.out.println(e); // 結果 11
 
+    // 試した
+    // System.out.println(a);
+    // int b = a++ + a; // 21 後置き評価後は 10 + 11 になる。a++は10の評価決定後に、++で11になる。右辺のaへ移動すると、値が++されているので、11となる。
+    // 以下だとわかりやすい
+    // int b = ++a + a; // 22 前置き評価ですぐ11になり、右辺も11になる。
+    // System.out.println(b);
+    // int b = a++ + a + a--; 
+    // System.out.println(a);
+    // System.out.println(b);
+    // System.out.println(a);
 
 
     // 3-3 コンパイルエラーはどれ

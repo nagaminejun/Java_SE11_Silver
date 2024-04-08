@@ -26,8 +26,12 @@ public class Sample {
   //     return false;
   //   }
   //   if (obj instanceof Sample) {
+  //     System.out.println(obj.getClass());
+  //     //System.out.println(this.name); // これは a
   //     Sample s = (Sample) obj;
+  //     //System.out.println(s.name); // これは b
   //     return s.num == this.num;
+  //     // equalsメソッドのデフォルトでは、this.equals(obj)
   //   }
   //   return false;
   // }
