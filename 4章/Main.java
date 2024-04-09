@@ -21,7 +21,7 @@ public class Main {
     //   for (int j = 0; j < 5; j++) {
     //     if (i * j > 6) {
     //       System.out.println("Breaking");
-    //       break outerLoop;  // 外側のループを終了
+    //       break outerLoop;  // ラベルを記述したことで、外側のループを終了
     //     }
     //     System.out.println(i + " " + j);
     //   }
@@ -42,12 +42,12 @@ public class Main {
     // 4-14 出力結果は、
     // String[] array = {"A", "B"};
     // for (String a : array) {
-    //   //System.out.println("いち");
+    //   // System.out.println("いちループ");
     //   for (String b : array) {
-    //     //System.out.println("　に");
-    //     if ("B".equals(b)){
-    //       break;
-    //     }
+    //     // System.out.print("　にループ　objの中は→");
+    //     // System.out.println(b);
+    //     if ("B".equals(b))
+    //       break; // この処理を理解して
     //     System.out.println(b);
     //   }
     // }
@@ -57,16 +57,42 @@ public class Main {
     // 4-13 ポストインクリメント 結果だけ確認する。
     // int num = 10;
     // do {
-    //   num++;
-    // } while (++num < 10);
-    // System.out.println();
+    //   num++; // この評価後に11
+    // } while (++num < 10); // この評価後に12
+    // System.out.println(num);
 
+    // A
     // int num = 10;
-    // while (num++ < 11) {
-    //   System.out.println("1回ループ");
+    // while (++num < 10) {
     //   num++;
     // }
     // System.out.println(num);
+    // 結果 11
+
+    // B
+    // int num = 10;
+    // while (++num <= 10) {
+    //   num++;
+    // }
+    // System.out.println(num);
+    // 結果 11
+
+    // C
+    // int num = 10;
+    // while (num++ < 10) {
+    //   num++;
+    // }
+    // System.out.println(num);
+    // 結果 11
+
+    // D
+    // int num = 10;
+    // while (num++ <= 10) {
+    //   num++;
+    // }
+    // System.out.println(num);
+    // 結果 11
+
 
     // 4-12 コンパイル後の結果は、
     // String[] array = {"A", "B", "C"};
@@ -76,7 +102,7 @@ public class Main {
     //   System.out.println(str);
     //   // System.out.println(array[0]);
     // }
-    // System.out.println(array[0] + "???");
+    // System.out.println(array[0] + "  str = \"D\"後");
     // for (String str : array) {
     //   System.out.println(str);
     // }
@@ -99,7 +125,7 @@ public class Main {
     // }
     // array.all できると思ったら出来なかった。全て出力するには拡張for文だけかも
 
-    // 4-11
+    // 4-11 A
      // 簡単なので省略
 
     // 4-10  無限ループにならないのは？
@@ -142,6 +168,12 @@ public class Main {
     // }
     // 結果、コンパイルエラー、i < 3, j < 5;を論理演算子で実装するべき、２つに分けない
 
+    // 解決策は
+    // for (int i = 0, j = 0; i < 3 && j < 5; i++) {
+    //   System.out.println(i++);
+    //   j +=i;
+    // }
+
 
     // 4-6  コンソールに0を表示して・問題は条件式部分。
     // for (int i = 0; i == 0; i++ ) {
@@ -153,7 +185,7 @@ public class Main {
     // 1 < 2 ※※※ 無限ループ
 
 
-    // 4-5  実行結果は
+    // 4-5  実行結果は　コンパイルエラー
     // int a = 1;
     // for (int b = 2, total = 0; b <= 5; b++) {
     //   total = a * b;
@@ -166,6 +198,7 @@ public class Main {
     // }
     // 結果、コンパイルエラー、初期化文の型は同じでないといけない。for(初期化文①, 初期化文②; 条件文、更新文)
     // for (int i = 0, j = 0; i < 5; i++) とか
+    
     // 型不一致のエラーを解消する別の方法、forブロックの外で定義すること
     // int i = 1;
     // long j = 2;
@@ -181,27 +214,17 @@ public class Main {
     //     a++;
     //     System.out.println(a);
     //   while (true); // 無限ループ注意
-      // 結果 コンパイルエラー
-    // 練習 !!無限ループ注意!!
-    // int cnt = 0;
-    // while (cnt < 5, cnt++)
-    //   System.out.println("A");
-    //   System.out.println("B");
-    // 結果はAが無限ループ、括弧省略の場合は、１行だけを対象とする。
+      // 結果 コンパイルエラー！
 
 
     // 4-2
     // int a = 0;
     // do {
-    // System.out.println(a++); // while前に実行させたい処理
-    // } while (a < 5); // 結果 0 ~ 4 出力
-    // 結果 0
-    // while (5 < a) {
     //   System.out.println(a++);
-    // } // 選択肢D 結果 0
-      
+    //   System.out.println(a + " a");
+    // } while (a < 5); // 選択肢C
 
-    // 4-1 コンソールに 0 ~ 4 を出力できる、while()の条件文は？→ b > 5
+    // 4-1 コンソールに 0 ~ 4 を出力できる、while()の条件文は？
     // int a = 11;
     // int b = 0;
     // while (b < 5) {
@@ -212,8 +235,8 @@ public class Main {
     //   b++;
     // }
   }
-  // 4-8 のプライベートメソッド
-  // private static void period() {
-  //   System.out.print(", ");
-  // }
+  // 4-8 プライベートメソッド
+  private static void period() {
+    System.out.print(", ");
+  }
 }
