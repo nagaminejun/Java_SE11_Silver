@@ -5,7 +5,7 @@ public class Main {
 
 
     // 3-21
-    // int num = 2;
+    // int num = 1;
     // switch (num) {
     //   case 1:
     //   case 2:
@@ -68,7 +68,7 @@ public class Main {
 
     // System.out.println(Day.values()); // enumが理解できない
 
-    // 3-19 switch文の戻り値で指定できない型
+    // 3-19 switch文の戻り値
     
     // int number = 1;
 
@@ -89,6 +89,51 @@ public class Main {
       // double型 不適合な型: 精度が失われる可能性があるdoubleからintへの変換
       // float型 不適合な型: 精度が失われる可能性があるfloatからintへの変換 case 1.111F:
       // boolean型 不適合な型: booleanをintに変換できません:
+    
+    // 試した switch文の戻り値で指定できない型
+    // long型、double型、float型、boolean型
+
+    // long myLong = 10L;
+    // switch(myLong) {
+    //   case 10L:
+    //     System.out.println("Long型");
+    // }
+    // 結果
+    // java 3章/Main.java
+    // 3章/Main.java:95: エラー: selector type long is not allowed
+    //     switch(myLong) {
+    //           ^
+
+    // double mydouble = 10.0;
+    // switch(mydouble) {
+    //   case 10.0:
+    //     System.out.println("mydouble型");
+    // }
+    // 結果
+    // 3章/Main.java:101: エラー: selector type double is not allowed
+    // switch(mydouble) {
+    //       ^
+
+    // float myFloat = 10.0F;
+    // switch(myFloat) {
+    //   case 10.0F:
+    //     System.out.println("myFloat型");
+    // }
+    // 結果
+    // 3章/Main.java:107: エラー: selector type float is not allowed
+    // switch(myFloat) {
+    //       ^
+
+    // boolean myBoolean = true;
+    // switch(myBoolean) {
+    //   case true:
+    //     System.out.println("myBoolean型");
+    // }
+    // 結果
+    // 3章/Main.java:126: エラー: selector type boolean is not allowed
+    // switch(myBoolean) {
+    //       ^
+
 
     // 3-18
     // int num = 10;
@@ -127,22 +172,22 @@ public class Main {
 
     // 3-15
     // int num = 10;
-    // // if (num <= 10) // 正解
-    // // if num <= 10
-    // // if (num <= 10) then // javaではthenキーワード使用しない
-    // // if num <= 10 then
-    //   System.out.println("ok");
+    // if (num <= 10) // 正解
+    // if num <= 10
+    // if (num <= 10) then // javaで thenキーワードは、、、
+    // if num <= 10 then
+    // System.out.println("ok");
 
-    // 3-14
+    // 3-14 internメソッド
     // String a = "abc";
     // String b = new String(a);
     // int count = 0;
-    // // System.out.println(a.intern()); abc
+    // // System.out.println(a.intern()); //abc
     // if (a.intern() == "abc") {
     //   count++;
     // }
-    // // System.out.println(b.intern()); abc
-    // if (b.intern() == "abc") {
+    // System.out.println(b == "abc"); // abc
+    // if (b == "abc") {
     //   count++;
     // }
     // // System.out.println(a.intern() == b.intern()); true
@@ -150,20 +195,22 @@ public class Main {
     //   count++;
     // }
     // System.out.println(count); // 結果 3
+    
     // // 試した
     // String str1 = new String("java");
     // String str2 = new String("java");
     // System.out.println(str1 == str2); // 結果 false
     // System.out.println(str1.intern() == str2.intern()); // 結果 true internメソッドがメモリ内の文字列("java")を参照しているから。str1やstr2のオブジェクトではない。
 
-    // 3-12 コンスタントプール、文字列プール
+    // 3-13 コンスタントプール、文字列プール
     // String a = new String("sample");
     // String b = "sample";
     // System.out.print(a == b);
     // System.out.print(", ");
     // System.out.print(a.equals(b));
     // System.out.print(", ");
-    // // 結果 false, true,
+    // 結果 false, true,
+
     // // 試した
     // String c = "sample"; // new がない所ポイント
     // String d = "sample";
@@ -179,10 +226,20 @@ public class Main {
     // //System.out.print(e.equals(f)); //プリミティブ型はequals() メソッドが定義されていません。結果コンパイルエラー
     // System.out.print(", ");
 
+    // 3-12 コンスタントプール、文字列プール
+    // String a = "sample";
+    // String b = "sample";
+    // System.out.print(a == b);
+    // System.out.print(", ");
+    // System.out.print(a.equals(b));
+    // System.out.print(", ");
+    // 結果 true, true,
+
     // 3-11
     // Object a = new Object();
     // Object b = null;
     // System.out.println(a.equals(b));
+
     // 以下を試した
     // Sample a = new Object();
     // Sample b = new Object();
@@ -198,11 +255,20 @@ public class Main {
     // エラー2個
 
     // 3-10 オーバーロード
-    // Object a = new Sample(10);
-    // Object b = new Sample(10);
-    // System.out.println(a.equals(b)); // 等値評価ならtrueだが、、
-    //解説
-    // SampleクラスでequalsメソッドがSample型へオーバーロードされているが、mainメソッドではObject型のaをインスタンス化しているため、Objectクラスのequalsメソッド（等価性）が呼び出される。等値ではない。試しに、Sample a に修正すると、結果はtrueになる。
+    // Objcet a = new Sample(10);
+    // Objcet b = new Sample(10);
+    // // 3-9のような処理を求めるなら、以下ではオーバーライドされたequalsメソッドを受け取りたいが、、、
+    // System.out.println(a.equals(b)); // 
+
+    /* 解説 SampleクラスでequalsメソッドがSample型へオーバーロードされているが、mainメソッドではObject型のaをインスタンス化しているため、「Objectクラスのequalsメソッド（等価性）」が呼び出される。等値ではない。試しに、Sample a に修正すると、結果はtrueになる。*/
+
+    // オーバーロードされたequalsメソッドを受け取る場合は以下
+    // Sample a = new Sample(10);
+    // Sample b = new Sample(10);
+    // // インスタンス化でSample型を指定しているので、以下のa.equals(b)では、Sampleクラスのメソッドが呼び出される。
+    // System.out.println(a.equals(b));
+    /* さらに勉強になる点
+    もし、Sampleクラスにequalsメソッドが未定義、オーバーライド、ロード未定義なら、デフォルトでObjectクラスのequalsメソッド（同一性と等価性のみ）が呼び出さ、falseになる。試してみて */
 
     // 3-9 equalsメソッドのオーバーライド
     // Sample a = new Sample(10, "a");
@@ -302,13 +368,13 @@ public class Main {
     // Object b = null;
     // System.out.println(a);
   }
-  public enum Day {
-    MONDAY,
-    TUESDAY,
-    WEDNESDAY,
-    THURSDAY,
-    FRIDAY,
-    SATURDAY,
-    SUNDAY
-  }
+  // public enum Day {
+  //   MONDAY,
+  //   TUESDAY,
+  //   WEDNESDAY,
+  //   THURSDAY,
+  //   FRIDAY,
+  //   SATURDAY,
+  //   SUNDAY
+  // }
 }
