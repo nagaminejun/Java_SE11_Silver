@@ -2,6 +2,69 @@ public class Main {
   public static void main(String[] args) {
     System.out.println();
 
+    // 6-30
+    // Sample s = new Sample(10);
+    // System.out.println(s + " コンストラクタで生成");
+    // modifiy(s);
+    // System.out.println(s.num);
+
+    // 6-29
+    // Sample s = new Sample(10);
+    // System.out.println(s);
+    // modifiy(s.num);
+    // System.out.println(s.num);
+    // 答え 10 ローカル変数に値を代入しているから
+
+    // 6-27
+    // StoryBook story = new StoryBook();
+    // story.setIsbn("xxx-xxx");
+    // story.printInfo();
+
+    // 6-25
+    // Sample s = new Sample();
+
+    // 6-24
+    // Sample s = new Sample();
+
+    // 6-23
+    // Sample s = new Sample();
+
+    // 試した、コンストラクタに合わせて引数を指定
+    // Sample s = new Sample("CC");
+
+    // 試した、メソッドを呼び出す
+    // Sample s = new Sample();
+    // s.Sample();
+    // 結果 A
+
+    // 6-22
+    // System.out.println(Sample.num);
+    // Sample s = new Sample();
+    // System.out.println(Sample.num);
+    // System.out.println(s.num);
+
+    // 6-21
+    // Sample s = new Sample();
+    // 試した
+    // Sample2 s2 = new Sample2();
+
+    // 6-20
+    // Sample s = new Sample();
+    // s.Sample();
+    // 答え A hello. 出力される が、この環境では実行時エラー。Sample.java側で public 実装して、Aになる。
+
+    // 6-19 選択問題
+    // 回答 D コンストラクタを修飾するアクセス修飾子に制限はない
+
+
+    // 6-18 次のメソッドをオーバーロードするメソッド定義はどれ、
+    // void method() {
+    //   // do something
+    // }
+    // public void method() {}
+    // protected void method() {}
+    // private void method() {}
+
     // 6-17
     // Main m = new Main();
     // System.out.println(m.calc(2, 3));
@@ -181,5 +244,24 @@ public class Main {
 
   // private double calc(int a, double b) {
   //   return (a + b) / 2;
+  // }
+
+  // 6-29
+  // private static void modifiy(int num) {
+  //   num *= 2;
+  // }
+  // private static void modifiy(s) {
+  //   s *= 2;
+  // }
+
+  // 6-30
+  // private static void modifiy(Sample s) {
+  //   System.out.println(s);
+  //   s.num *= 2;
+  // }
+  // 6-30 試した
+  // private static void modifiy(Sample ss) { // 引数はSample 型のオブジェクトの参照を期待している、※ インスタンスsを指定しているのではなく、あくまでローカル変数名をsとしてるだけ、「参照先は一緒」、Sample ss と変えても機能する
+  //   System.out.println(ss);
+  //   ss.num *= 2; // 結果同じ
   // }
 }

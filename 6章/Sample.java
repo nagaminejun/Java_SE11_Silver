@@ -1,4 +1,91 @@
 public class Sample {
+  // System.out.println();
+
+  // 6-29,6-30
+  // public int num;
+  // public Sample(int num) {
+  //   this.num = num;
+  // }
+
+  // 6-28 カプセル化をするには、
+  // int num;
+  // int getNum() { return num;}
+  // void setNum(int num) { this.num = num; }
+
+  // 6-25
+  // public Sample() {
+  //   System.out.println("A");
+  //   this("B");
+  // }
+  // public Sample(String str) {
+  //   System.out.println(str);
+  // }
+  // 答え E
+  // Sample.java:7: エラー: thisの呼出しはコンストラクタの先頭文である必要があります
+  //     this("B");
+  //         ^
+  // エラー1個
+
+  // 出力するには以下
+  // public Sample() {
+  //   this("B"); // コンストラクタでのthisは先頭分である規則がある。
+  //   System.out.println("A");
+  // }
+  // public Sample(String str) {
+  //   System.out.println(str);
+  // }
+
+  // 6-24 コンソールにOK.と出力するには
+  // public Sample() {
+  //   // Sample(null, 0);
+  //   // this(null, 0);
+  //   // super(null, 0);
+  //   // this.Sample(null, 0);
+  // }
+
+  // public Sample(String str, int num) {
+  //   System.out.println("ok.");
+  // }
+  // 答え B
+
+  // 6-23
+  // public void Sample() {
+  //   System.out.println("A");
+  // }
+  // public Sample(String str) {
+  //   System.out.println(str);
+  // }
+  // 試した
+  // public void Sample() {
+  //   System.out.println("A");
+  // }
+  // 一旦以下コンストラクタをコメントアウト
+  // public Sample(String str) {
+  //   System.out.println(str);
+  // }
+
+  // 6-22
+  // public static int num;
+  // {
+  //   num = 10; // 初期化ブロック
+  //   System.out.println(num);
+  // }
+  // public Sample() {
+  //   num = 100;
+  // }
+
+  // 6-21
+  // public Sample() {
+  //   System.out.println("A");
+  // }
+  // {
+  //   System.out.println("B");
+  // }
+
+  // 6-20
+  // void Sample() {
+  //   System.out.println("hello.");
+  // }
 
   // 6-15
   // public void method(int num) {
