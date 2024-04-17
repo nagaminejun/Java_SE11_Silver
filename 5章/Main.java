@@ -107,14 +107,14 @@ public class Main {
     // array[0] = ""; // エラーなし
 
     // 5-5 実行結果は、
-    // Item[] items = new Item[3];
-    // int total = 0;
-    // for (int i = 0; i < items.length; i++) {
-    //   items[i] = new Item(1);
-    //   System.out.println(items[i]);
-    //   total += items[i].price;
-    // }
-    // System.out.println(total);
+    Item[] items = new Item[3];
+    int total = 0;
+    for (int i = 0; i < items.length; i++) {
+      items[i] = new Item();
+      System.out.println(items[i]);
+      total += items[i].price;
+    }
+    System.out.println(total);
     // 結果、実行時エラー、解説はchat GPTの履歴見て
     /* Exception in thread "main" java.lang.IllegalAccessError: class Main tried to access field Item.price (Main is in unnamed module of loader com.sun.tools.javac.launcher.Main$MemoryClassLoader @103f852; Item is in unnamed module of loader 'app')
         at Main.main(Main.java:9) */

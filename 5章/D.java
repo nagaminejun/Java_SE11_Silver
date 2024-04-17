@@ -1,4 +1,4 @@
-public class D extends C {}
+// public class D extends C {}
 
 // 試した
 // public class D {}
