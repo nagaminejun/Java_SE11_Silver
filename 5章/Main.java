@@ -6,8 +6,11 @@ public class Main {
     // int[][] arrayA = { { 1, 2 }, { 1, 2 }, {1, 2, 3} };
     // int[][] arrayB = arrayA.clone();
     // // int[][] arrayB = new int[2][3]; // 試してみて
-    // System.out.println(arrayB);
-    // arrayB = arrayA;
+    // // System.out.println(arrayA);
+    // // System.out.println(arrayA[0]);
+    // // System.out.println(arrayB);
+    // // System.out.println(arrayB[0]);
+    // // arrayB = arrayA;
     // int total = 0;
     // for (int[] tmp : arrayB) {
     //   for (int val : tmp) {
@@ -31,17 +34,25 @@ public class Main {
     // // 結果、エラー無し
 
     // // 試した
+    // A[] array = { new B() }; // エラー: Bはabstractです。インスタンスを生成することはできません
+    // A[] array = { new C() };
+    // C[] cgata = array;
+
+    // B[] bgata = array;
+    // C[] cgata = array;
+    // D[] dgata = array;
     // System.out.println(objArray[1]); // null
     // System.out.println(objArray[0]); // C@727803de
 
     // 5-8 実行結果は、
-    // String[][] array = { { "A", "B" }, {"null?"}, { "C", "D", "E" } };
-    // System.out.println(array[2][0]);
+    // String[][] array = { { "A", "B" }, null, { "C", "D", "E" } };
     // int total = 0;
     // for (String[] tmp : array) {
     //   total += tmp.length;
     // }
     // System.out.println(total);
+    // 結果 コンパイル通るが、実行時エラー
+    // nullを{}に置き換えると、出力成功。
 
     // 3次元配列の練習
     // String[][][] ren = new String[3][2][1];
@@ -65,6 +76,19 @@ public class Main {
     // };
     // System.out.println(ren[0][1][0]);
 
+    // String[][] array = { { "A", "B" }, {}, { "C", "D", "E" } };
+    // System.out.println(array[0]);
+    // int total = 0;
+    // for (String[] tmp : array) {
+    //   total += tmp.length;
+    // }
+    // System.out.println(total);
+
+    // String[] array2 = new String[3];
+    // System.out.println("結果は " + array2[0]);
+    // System.out.println("結果は " + array2[1]);
+    // System.out.println("結果は " + array2[2]);
+
 
     // 5-7 コンパイルエラーにならないのはどれ
     // int[] a = new int[2];
@@ -83,6 +107,10 @@ public class Main {
     // int[] a = new int[2];
     // a[0] = 2;
     // a[1] = 3;　// 成功
+
+    // int[][] d;
+    // d = new int[][]{}; // 上述で宣言した多次元数を、new で「同じ数」大カッコで記述する
+
 
     // int[] b = new int[2]{ 2, 3 }; // エラー
     // int[] c = new int[3]; // 長さ3のint型配列を作成し、全ての要素を0で初期化
@@ -107,14 +135,14 @@ public class Main {
     // array[0] = ""; // エラーなし
 
     // 5-5 実行結果は、
-    Item[] items = new Item[3];
-    int total = 0;
-    for (int i = 0; i < items.length; i++) {
-      items[i] = new Item();
-      System.out.println(items[i]);
-      total += items[i].price;
-    }
-    System.out.println(total);
+    // Item[] items = new Item[3];
+    // int total = 0;
+    // for (int i = 0; i < items.length; i++) {
+    //   items[i] = new Item();
+    //   System.out.println(items[i]);
+    //   total += items[i].price;
+    // }
+    // System.out.println(total);
     // 結果、実行時エラー、解説はchat GPTの履歴見て
     /* Exception in thread "main" java.lang.IllegalAccessError: class Main tried to access field Item.price (Main is in unnamed module of loader com.sun.tools.javac.launcher.Main$MemoryClassLoader @103f852; Item is in unnamed module of loader 'app')
         at Main.main(Main.java:9) */

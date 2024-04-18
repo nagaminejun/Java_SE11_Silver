@@ -1,6 +1,6 @@
-public interface A {
-  public void Test();
-}
+// public interface A {
+//   // public void Test();
+// }
 
 // 試した
 // public class A {}
