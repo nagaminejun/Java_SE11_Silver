@@ -2,6 +2,11 @@ public class Main {
   public static void main(String[] args) {
     System.out.println();
 
+    // Personクラスのstaticフィールドへのアクセス練習
+    // new Person();
+    // System.out.println(Person.count);
+    // System.out.println("Total instances: " + Person.getCount());
+
     // 6-30
     // Sample s = new Sample(10);
     // System.out.println(s + " コンストラクタで生成");
@@ -15,10 +20,7 @@ public class Main {
     // System.out.println(s.num);
     // 答え 10 ローカル変数に値を代入しているから
 
-    // 6-27
-    // StoryBook story = new StoryBook();
-    // story.setIsbn("xxx-xxx");
-    // story.printInfo();
+    // 6-27 問題理解するために、ex27ファイルへ
 
     // 6-25
     // Sample s = new Sample();
@@ -44,9 +46,20 @@ public class Main {
     // System.out.println(s.num);
 
     // 6-21
-    // Sample s = new Sample();
-    // 試した
-    // Sample2 s2 = new Sample2();
+    // Sample s = new sample();
+
+    // 試した 静的初期化ブロックあり
+    // Sample s2 = new Sample();
+    // Sample s3 = new Sample();
+    // Sample s4 = new Sample();
+    // 出力結果
+    // 静的初期化ブロック
+    // インスタンス初期化ブロック
+    // コンストラクタ
+    // インスタンス初期化ブロック
+    // コンストラクタ
+    // インスタンス初期化ブロック
+    // コンストラクタ
 
     // 6-20
     // Sample s = new Sample();
@@ -83,14 +96,8 @@ public class Main {
 
     // 6-15 Sampleクラスでの問題
 
-    // 6-14 メソッドの宣言で正しいのはどれ　可変長引数
-    // void method(void) {}
-    // void method(int values...) {}
-    // void method(int... values, String name){}
-    // void method(int... a, int... b) {}
-    // 結果 全て不正解
-    // 正しくは
-    // void method(int... values) {}
+    // 6-14 メソッドの宣言で正しいのはどれ　可変長引数、メソッド定義はmain()の外部に
+
 
     // 試した sumメソッドはmain()外
     // System.out.println(sum(1, 2, 3)); // 出力: 6
@@ -168,14 +175,26 @@ public class Main {
 
     // 6-5 コンパイル、実行結果は、
     // Sample.num = 10;
+    // System.out.println(Sample.num);
     // Sample s = new Sample();
+    // System.out.println(s);
+    // System.out.println(Sample.num);
     // Sample s2 = new Sample();
-    // s.num += 10;
+    // System.out.println(s2);
+    // System.out.println(Sample.num);
+    // s.num += 100;
+    // System.out.println(Sample.num);
     // s2.num = 30;
     // System.out.println(s.num);
     // System.out.println(s2.num);
     // System.out.println(Sample.num);
+
+    // Sample.num = 10;
+    // System.out.println(s.num);
+    // System.out.println(s2.num);
+    // System.out.println(Sample.num);
     // 結果 30 クラスフィールド（Static Field）、属性（インスタンスフィールド）を理解する
+
 
     // 試した、属性（インスタンスフィールド）
     // Sample s = new Sample();
@@ -190,17 +209,22 @@ public class Main {
     // Object a = new Object();
     // Object b = new Object();
     // Object c = a;
+    // System.out.println(a);
+    // System.out.println(b);
     // a = null;
     // b = null;
+    // System.out.println(a);
+    // System.out.println(b);
+    // System.out.println(c);
     // 答え B
 
-    // 6-3 nullと表示するためのコードは
+    // 6-3 NULLと表示するためのコードは
     // Object obj = null;
     // Object obj = false;
     // Object obj = NULL;
     // Object obj = "";
     // System.out.println(obj);
-    // 答え A Object obj = null;のみ、定数に注意。
+    // 答え F ない、nullと表示したい場合はObject obj = null;のみ
 
     // 補足、Object obj = NULL;で nullを出力したい場合は、定数を定義する。
     // final Object NULL = null;
@@ -225,6 +249,16 @@ public class Main {
     // 結果 10
 
   }
+
+  // 6-14
+  // void method(void) {}
+  // void method(int values...) {}
+  // void method(int... values, String name){}
+  // void method(int... a, int... b) {}
+  // 結果 全て不正解
+  // 正しくは
+  // void method(int... val) {}
+
   // 6-14 試した
   // 試した
   // public static int sum(int... numbers) {

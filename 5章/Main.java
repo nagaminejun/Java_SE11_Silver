@@ -2,6 +2,7 @@ public class Main {
   public static void main(String[] args) {
     System.out.println();
 
+    
     // 5-10 実行結果は、
     // int[][] arrayA = { { 1, 2 }, { 1, 2 }, {1, 2, 3} };
     // int[][] arrayB = arrayA.clone();

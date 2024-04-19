@@ -20,13 +20,13 @@ public class Sample {
   // public Sample(String str) {
   //   System.out.println(str);
   // }
-  // 答え E
+  // 答え E 理由：初期化に反する実装
   // Sample.java:7: エラー: thisの呼出しはコンストラクタの先頭文である必要があります
   //     this("B");
   //         ^
   // エラー1個
 
-  // 出力するには以下
+  // 出力するには以下、理由の解説はchat GPTの履歴へ
   // public Sample() {
   //   this("B"); // コンストラクタでのthisは先頭分である規則がある。
   //   System.out.println("A");
@@ -38,23 +38,29 @@ public class Sample {
   // 6-24 コンソールにOK.と出力するには
   // public Sample() {
   //   // Sample(null, 0);
-  //   // this(null, 0);
+  //   this(null, 0);
   //   // super(null, 0);
-  //   // this.Sample(null, 0);
+  //   this.Sample(null, 0);
   // }
 
   // public Sample(String str, int num) {
-  //   System.out.println("ok.");
+  //   System.out.println("コンストラクタで出力、ok.");
   // }
   // 答え B
 
+  // 試した
+  // public void Sample(String str, int num) {
+  //   System.out.println("一般メソッドで出力");
+  // }
+
   // 6-23
-  // public void Sample() {
+  // void Sample() {
   //   System.out.println("A");
   // }
-  // public Sample(String str) {
-  //   System.out.println(str);
+  // Sample(String str) {
+  //   System.out.println(str + " コンストラクタで出力");
   // }
+
   // 試した
   // public void Sample() {
   //   System.out.println("A");
@@ -65,22 +71,57 @@ public class Sample {
   // }
 
   // 6-22
-  // public static int num;
+  // public static int num; // static 変数のデフォルト値 0
   // {
-  //   num = 10; // 初期化ブロック
+  //   num = 10; // 初期化ブロック、インスタンス生成のタイミングで実行される
   //   System.out.println(num);
   // }
   // public Sample() {
   //   num = 100;
   // }
 
-  // 6-21
-  // public Sample() {
-  //   System.out.println("A");
+  // 試した、静的初期化、staticブロックの練習
+  // static {
+  //   System.out.println("静的初期化ブロック");
   // }
   // {
-  //   System.out.println("B");
+  //   System.out.println("インスタンス初期化ブロック");
   // }
+  // public Sample() {
+  //   System.out.println("コンストラクタ");
+  // }
+
+  // 試した２ 静的初期化ブロックとインスタンス初期化ブロック、どちらが先か
+  // {
+  //   System.out.println("インスタンス初期化ブロック");
+  // }
+  // static {
+  //   System.out.println("静的初期化ブロック");
+  // }
+  // public Sample() {
+  //   System.out.println("コンストラクタ");
+  // }
+  // 結果、staticが先らしい
+  // 静的初期化ブロック
+  // インスタンス初期化ブロック
+  // コンストラクタ
+  // インスタンス初期化ブロック
+  // コンストラクタ
+  // インスタンス初期化ブロック
+  // コンストラクタ
+
+
+  // 6-21
+  // public Sample() { // コンストラクタ部分
+  //   System.out.println("A"); // コンストラクタ部分
+  // } // コンストラクタ部分
+  // { // 初期化ブロック
+  //   System.out.println("B"); // 初期化ブロック
+  // } // 初期化ブロック
+
+  // 自分がわかりやすいよう改行
+  // public Sample() { System.out.println("A"); } // この行がコンストラクタ部分で、
+  // { System.out.println("B"); } // この行がコンストラクタの前にある初期化ブロック
 
   // 6-20
   // void Sample() {
@@ -156,6 +197,10 @@ public class Sample {
   //   sample.modifyAndPrintStaticNum();
   // }
 
+  
   // Static.staticNum = 10;
-  // public int num = 0; // これはインスタンスフィールド、試して
+
+  // 6-5
+  // static int num = 0; // これはインスタンスフィールド、試して
+  // int num2 = 0;
 }
