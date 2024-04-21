@@ -10,12 +10,11 @@
 //   // }
 //   // 正解は E 、実行結果がコンパイルエラー。間接的に継承されたインターフェイスの default メソッドをInterfaceName.super.methodName() 形式で呼び出すことはできない、というルールに該当
 
-//   // 成功するには①
+
+//   // 試した① 選択肢A Interfacename.super.sample();を成功させるには
 //   // @Override
 //   // public void sample() {
-//   //   // A.super.sample();
-//   //   B.super.sample();
-//   //   // super.sample();
+//   //   B.super.sample(); // Bインタフェースのメソッドを呼び出す
 //   //   System.out.println("Java");
 //   // }
 

@@ -1,9 +1,16 @@
 // 7-14
-public class Engineer extends Employee {
-  public void create() {
-    System.out.println("create future");
-  }
-}
+// public class Engineer extends Employee {
+//   public void create() {
+//     System.out.println("create future");
+//   }
+// }
+
+// 7-14 試した
+// public class Engineer extends Employee implements Worker {
+//   public void create() {
+//     System.out.println("create future");
+//   }
+// }
 
 // 7-13
 // public class Engineer extends Employee implements Worker {}

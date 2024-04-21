@@ -3,7 +3,7 @@ public class Main {
     System.out.println();
 
     // 7-21
-    new Child("D");
+    // new Child("D");
 
     // 7-20
     // A a = new B();
@@ -11,7 +11,13 @@ public class Main {
     // 7-19
     // Child child = new Child();
     // child.name = "sample";
+    
+    // 試した
     // System.out.println(child.getName());
+    // System.out.println(child.name);
+    // Parent child2 = child; // アップキャスト
+    // child.name = "AAA";
+    // System.out.println(child2.name);
 
     // 7-19でthisを理解するために
     // B b = new B();
@@ -49,6 +55,10 @@ public class Main {
     // a.hello();
     // a.test(); // A a = new B();の場合はエラー
 
+    // B b = new B();
+    // A a = b;
+    // a.hello();
+
     // 7-16 helloと出力したい
     // A a = new B();
     //
@@ -77,6 +87,10 @@ public class Main {
     // a.create();
     // b.work();
     // c.report();
+
+    // 試した、a.create();を機能させるためには
+    // Engineer.javaにimplements Workerを追加、
+    // Worker.java にcreate();実装なしを追加、それに伴い、Employee.javaに実装なしのpublic void create() {}を追加
 
     // 7-13
     // Worker worker = new Engineer();

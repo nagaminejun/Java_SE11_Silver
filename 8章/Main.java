@@ -53,12 +53,12 @@ public class Main {
     // System.out.println(f.test("Lamda"));
 
     // 8-1
-    // Algorithm algorithm = (String name) -> {
-    // System.out.println("hello, " + name);
-    // };
-    // Service s = new Service();
-    // s.setLogic(algorithm);
-    // s.doProcess("Lambda");
+    Algorithm algorithm = (String name) -> {
+    System.out.println("hello, " + name);
+    };
+    Service s = new Service();
+    s.setLogic(algorithm);
+    s.doProcess("Lambda");
   }
 
   // 8-2

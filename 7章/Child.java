@@ -3,21 +3,26 @@
 public class Child extends Parent {
 
   // 7-21
-  public Child() {
-    super("B");
-    System.out.println("C");
-  }
+  // public Child() {
+  //   super("B");
+  //   System.out.println("C");
+  // }
 
-  public Child(String val) {
-    this();
-    System.out.println(val);
-  }
+  // public Child(String val) {
+  //   this();
+  //   System.out.println(val);
+  // }
 // 
 
 
 
   // 7-19
   // public String name;
+
+  // 試した
+  // public Child() {
+  //   System.out.println(this + " Childでthis実行");
+  // }
 
   // Child() {
   //   name = "java";

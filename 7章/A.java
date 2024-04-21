@@ -16,15 +16,15 @@
 // }
 
 // 7-17
-// public class A {
-//   public void hello() {
-//     System.out.println("A");
-//   }
+public class A {
+  public void hello() {
+    System.out.println("A");
+  }
 
-//   public void upcast() {
-//     System.out.println("A でupcastメソッド");
-//   }
-// }
+  // public void upcast() {
+  //   System.out.println("A でupcastメソッド");
+  // }
+}
 
 // 7-16
 // public class A {}
@@ -53,10 +53,10 @@
 // public interface A {
 
 //   // 7-11
-//   String val = "A";
-//   void print() {
-//     System.out.println(val);
-//   }
+//   // String val = "A";
+//   // void print() {
+//   //   System.out.println(val);
+//   // }
 //   // 7-7
 //   // default void test() {
 //   //   System.out.println("A");

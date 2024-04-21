@@ -5,6 +5,7 @@
 //   }
 // }
 
+
 // 7-19 thisを理解するために
 // public class B extends A {
 //   int num = 20;
@@ -18,16 +19,16 @@
 
 
 // 7-17
-// public class B extends A {
-//   public void hello() {
-//     super.hello();
-//     System.out.println("B");
-//   }
+public class B extends A {
+  public void hello() {
+    // super.hello();
+    System.out.println("B");
+  }
 
-//   public void test() {
-//     System.out.println("B でtest");
-//   }
-// }
+  // public void test() {
+  //   System.out.println("B でtest");
+  // }
+}
 
 // 7-16
 // public class B extends A {
@@ -53,14 +54,16 @@
 //     System.out.println("Overridden method in B");
 //   }
 // }
+// public interface B extends A {
 
-// public class B implements A {
-
+//   // 7-6
+//   // 試した Interfacename.super.sample();を成功させるには
 //   // @Override
-//   // public void sample() {
+//   // default void sample() {
 //   //   A.super.sample();
-//   //   System.out.println("Hello");
-//   // }
+//   // } 
+//   /* この実装に追加で、Cクラスのsample()にはB.super.sample();を実装 */
+  
 
 //   // 7-5
 //   // @Override
