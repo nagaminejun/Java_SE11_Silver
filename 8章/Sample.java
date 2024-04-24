@@ -4,18 +4,22 @@ public class Sample {
     // 8-4
     // int cnt = 0;
     // Runnable r = () -> {
-    //   for (cnt = 0; cnt < 10; cnt++) {
-    //     System.out.println(cnt++);
+    //   for (cnt = 0; cnt < 10; cnt++) {エラー: ラムダ式から参照されるローカル変数は、finalまたは事実上のfinalである必要があります
+    //     System.out.println(cnt++);エラー: ラムダ式から参照されるローカル変数は、finalまたは事実上のfinalである必要があります
     //   }
     // };
     // new Thread(r).start();
-    // 結果、コンパイルエラー
-    // ラムダ式内でint cnt = 0;を定義すればOK、が、出力がされない？
+    // 結果、コンパイルエラー、ラムダ式「内」でcnt変数の値を変えてはならない
+
+
+    // 試した cnt変数の値を変えずに？
+    // int cnt = 0;
     // Runnable r = () -> {
-    //   for (int cnt = 0; cnt < 10; cnt++) {
-    //     System.out.println(cnt++);
+    //   for (int i = 0; i < 10; i++) {
+    //     System.out.println(cnt + i);
     //   }
     // };
+    // System.out.println(cnt);
     // new Thread(r).start();
   }
 }

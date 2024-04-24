@@ -40,30 +40,70 @@ public class Main {
     // };
     // f.test("B");
 
-    // 8-3で、ローカル変数valをラムダ式内で出力する場合
+    // 8-3で、ローカル変数valを出力する場合、ラムダ式内の変数を同名にしない
     // String val = "A";
-    // Function f = () -> {
-    //   System.out.println(val);
+    // Function f = (anotherVal) -> {
+    //   System.out.println(anotherVal);
     // };
-    // f.test();
+    // f.test(val);
 
-    // 8-2 insert code hereに入るコードで誤っているものは
+    // 8-2 insert code hereに入るコードで「誤っているもの」は
     // insert code here
-    
-    // System.out.println(f.test("Lamda"));
+
+    // Function f = (name) ->{
+    //   return  "hello, " + name;
+    // };
+
+    // 試した
+    // Function f = name, n2 -> "hello, " + name; // エラー
+    // Function f = (name) -> "hello, " + name;
+    // Function f = name -> "hello, " + name;
+    // Function f = (name) ->{ return  "hello, " + name; };
+    // Function f = (name) -> return "hello, " + name; //  エラー
+    // Function f = (name) ->{ return  "hello, "}; // エラー
+    // Function f = (name) -> return name; //  エラー
+    // Function f = (name) -> return  "hello, "; // エラー: 式の開始が不正です
+    // Function f = (name) -> "hello, ";
 
     // 8-1
-    Algorithm algorithm = (String name) -> {
-    System.out.println("hello, " + name);
-    };
-    Service s = new Service();
-    s.setLogic(algorithm);
-    s.doProcess("Lambda");
+    // Algorithm algorithm = (String name) -> {
+    // System.out.println("hello, " + name);
+    // };
+    // Service s = new Service();
+    // s.setLogic(algorithm);
+    // s.doProcess("Lambda");
+
+    // Service s2 = new Service();
+    // s2.hello();
+
+    // ラムダ式練習、ラムダ式を使用した匿名クラスのオブジェクト生成
+    // Runnable runnable = () -> System.out.println("This is a lambda expression");
+    // runnable.run();
+
+    // ラムダ式、練習２ Animalインターフェイス
+    // Animal myDog = () -> System.out.println("わん！");
+    // myDog.makeSound();
+    // ラムダ式を使用しない場合は、Dogクラスやファイルを生成して、生成したインスタンスから抽象メソッドを具現化する。
+
+    // ラムダ式使用しない、匿名クラスのサンプル
+    // Runnable runnable = new Runnable() {
+    // @Override
+    // public void run() {
+    //   System.out.println("This is an anonymous class");
+    //   }
+    // };
+    // runnable.run();
   }
+
 
   // 8-2
   // private static interface Function {
   //   String test(String name);
+  // }
+
+  // 試した
+  // private static interface Function {
+  //   String test(String name, String name2);
   // }
 }
 // 8-5
@@ -99,7 +139,7 @@ public class Main {
 
 // 8-3
 // interface Function {
-//   void test(val);
+//   void test(String val);
 // }
 
 // 8-3で、ローカル変数valをラムダ式内で出力する場合
