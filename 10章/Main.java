@@ -6,7 +6,7 @@ public class Main {
     System.out.println();
 
     // 問題10-17 
-    main(args);
+    // main(args);
 
     // 問題10-16
     // String str = null;
@@ -51,6 +51,17 @@ public class Main {
 
     // 10-13
     // System.out.println(args[0].length());
+
+    // 試した
+    // // System.out.println(args.length()); // エラー
+    // System.out.println(args.length);
+    // String str = "abcde";
+    // System.out.println(str.length());
+    // String str2 = "abcde";
+    // // System.out.println(str.length); // エラー
+    // int[] args2 = {};
+    // System.out.println(args2.length);
+    // // System.out.println(args2.length()); // エラー
 
     // 10-9
     // try {
@@ -115,6 +126,11 @@ public class Main {
     //   System.out.println("C");
     // }
 
+    // 試した
+    // Object obj = null;
+    // System.out.println(obj.toString());
+    // NullPointerException
+
     // 正しくは
     // try {
     //   Object obj = null;
@@ -130,22 +146,40 @@ public class Main {
     // try {
     //   sample();
     //   sub();
+    // } catch (SampleException e) { // 親クラス
+    //   System.out.println("A");
+    // } catch (SubSampleException e) { // 子クラス
+    //   System.out.println("B"); 
+    // }
+
+    // 試した
+    // try {
+    //   sub(); // 逆にした
+    //   sample();
     // } catch (SampleException e) {
     //   System.out.println("A");
     // } catch (SubSampleException e) {
     //   System.out.println("B");
     // }
+    // 結果同じエラー
+    // Main.java:145: エラー: 例外SubSampleExceptionはすでに捕捉されています
+    //     } catch (SubSampleException e) {
+    //       ^
+    // エラー1個
+    // エラー: コンパイルが失敗しました
 
     // 試した
     // try {
+    //   System.out.print("sample実行前！！");
     //   sample();
+    //   System.out.println("sample実行後に");// これは実行されない
     //   sub();
     // } catch (SubSampleException e) {
     //   System.out.println("A");
     // } catch (SampleException e) {
     //   System.out.println("B");
     // }
-    // 結果 B
+    // 結果 sample実行前！！B
 
     // 10-2
     // try {
@@ -158,6 +192,12 @@ public class Main {
     //   System.out.println("C");
     // }
 
+    // 試した
+    // System.out.println(args);
+    // System.out.println(args.length);
+    // System.out.println(args.length == 0);
+    // System.out.println(args[0]); // java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+
     // 10-1
     // try {
     //   int[] array = {};
@@ -166,6 +206,12 @@ public class Main {
     // } catch (ArrayIndexOutOfBoundsException e) {
     //   System.out.println("error");
     // }
+
+    // 試した
+      // int[] array = {};
+      // array[0] = 10;
+      // 実行時例外エラー
+      // System.out.println(array.length);
 
     // 試した
     // int[] array = new int[]{ 2, 3 };
@@ -182,7 +228,7 @@ public class Main {
   //     System.out.println(array[3]);
   //   } catch (RuntimeException e) {
   //     val = 10;
-  //     System.out.println(val + "  catchで");
+  //     System.out.println(val + "  catchで ");
   //     return val;
   //   } finally {
   //     val += 10;
@@ -202,11 +248,12 @@ public class Main {
   //     System.out.println(val + "  catchで");
   //     return val;
   //   } finally {
-  //     val += 10;
+  //     val += 10000;
   //     System.out.println(val + "  finallyで");
-  //     return val; // 基本finallyブロックでreturnは非推奨
+  //     return val;
   //   }
-  //   return val; // 上記のreturn記述すると左記returnが到達不能でエラーになる。解消案はどちらか記述しないこと、
+  //   // System.out.println(val + "  tryブロック外で");
+  //   // return val;
   // }
 
   // 10-6
@@ -227,7 +274,7 @@ public class Main {
   //   try {
   //     System.out.println(obj.toString());
   //   } catch (NullPointerException e) {
-  //     return "A";
+  //     return "A!";
   //   } finally {
   //     System.out.println("B");
   //   }
@@ -239,10 +286,11 @@ public class Main {
   //   try {
   //     System.out.println(obj.toString());
   //   } catch (NullPointerException e) {
-  //     System.out.println("--catchブロックのprintln");
-  //     return "A  --catchブロックのreturn";
+  //     System.out.println("--catchブロックのreturn前");
+  //     // return "A  --catchブロックのreturn";
   //   } finally {
   //     System.out.println("B  --finallyブロックのprintln");
+  //     return "finallyのreturn";
   //   }
   //   return "C";
   // }

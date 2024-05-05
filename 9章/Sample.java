@@ -1,7 +1,7 @@
-// import java.time.DayOfWeek; // 9-6
-// import java.time.LocalDate; // 9-5, 9-6
-// import java.util.HashMap; // 9-19
-// import java.util.Map; // 9-19
+import java.time.DayOfWeek; // 9-6
+import java.time.LocalDate; // 9-5, 9-6
+import java.util.HashMap; // 9-19
+import java.util.Map; // 9-19
 
 public class Sample {
   public static void main(String[] args) {
@@ -17,6 +17,15 @@ public class Sample {
     // System.out.println(map.size());
 
     // // 試した
+    // map.put(0, new Item(0, "keyを 0 で！"));
+    // map.put(10, new Item(10, "10で！"));
+    // System.out.println(map.get(10));
+    // System.out.println(map.get(10).getName());
+    // System.out.println(map);
+    // System.out.println(map.get(0));
+    // System.out.println(map.get(null));
+    // System.out.println(map.get(null).getName());
+    // System.out.println(map.get(0).getName());
     // System.out.println(map.get(1));
     // System.out.println(map.get(1).getName());
 
@@ -33,17 +42,24 @@ public class Sample {
     // 9-6
     // LocalDate a = LocalDate.of(2019,8,19);
     // LocalDate b = LocalDate.of(2019,8,20); // 左記はテスト用で修正、 LocalDate.now();
+    // System.out.println(b);
     // b.with(DayOfWeek.MONDAY); // 2019,8,19は月曜日
+    // System.out.println(b);
     // System.out.println(a.equals(b) + " , " + a.isBefore(b));
     // // 確認用
     // System.out.println(b);
     // System.out.println(b.with(DayOfWeek.MONDAY));
 
     // 9-5
+    // LocalDate a = LocalDate.of(2015, 0, 1);
+    // LocalDate b = LocalDate.parse("2015-01-01");
+    // System.out.println(a.equals(b));
+    // 結果実行時エラー
+
+    // 確認用
     // LocalDate a = LocalDate.of(2015, 01, 1);
     // LocalDate b = LocalDate.parse("2015-01-01");
     // System.out.println(a.equals(b));
-    // // 確認用
     // System.out.println(a == b); // インスタンスが違うのでfalse
     // System.out.println(a);
     // System.out.println(b);
@@ -70,19 +86,19 @@ public class Sample {
 
 // public class Sample {
 
-//   // 9--2
-//   // private int id;
-//   // private String name;
-//   // public Sample(int id, String name) {
-//   //   super();
-//   //   this.id = id;
-//   //   this.name = name;
-//   // }
+//   // 9-2
+//   private int id;
+//   private String name;
+//   public Sample(int id, String name) {
+//     super(); // 無くても可、親クラスが今後コンストラクタ定義したときのため、拡張性という見方で記述推奨らしい
+//     this.id = id;
+//     this.name = name;
+//   }
 
-//   // public int getId() {
-//   //   return id;
-//   // }
-//   // public String getName() {
-//   //   return name;
-//   // }
+//   public int getId() {
+//     return id;
+//   }
+//   public String getName() {
+//     return name;
+//   }
 // }

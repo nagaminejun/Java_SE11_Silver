@@ -1,6 +1,8 @@
 import java.util.ArrayList; // 9-2 7 8 9 10 11 12 13
 import java.util.Arrays;
 import java.util.List;
+import java.util.Collections; // 9-3で試す用
+import java.util.Comparator;
 
 public class Main {
   public static void main(String[] args) {
@@ -22,6 +24,11 @@ public class Main {
     // list.forEach(str -> System.out.println(str));
     // list.forEach(str -> System.out.println(str));
 
+    // 教材のサンプルコードを試す
+    // List<String> list = List.of("A", "B", "C");
+    // Consumer<String> logic = forEachTest.Main::test;
+    // list.forEach(logic);
+
     // 9-17
     // List<String> list = new ArrayList<>(
     //   Arrays.asList(new String[]{"A", "B", "C"})
@@ -31,7 +38,13 @@ public class Main {
     //     return s.equals("B");
     //   }
     // );
-    // System.out.println(list);
+    // System.out.println(list)
+
+    // 試した
+    // List<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+    // // 偶数を削除する
+    // numbers.removeIf(n -> n % 2 == 0);
+    // System.out.println(numbers);
 
     // 9-16
     // String[] a = {"B", "X"};
@@ -49,6 +62,11 @@ public class Main {
     // int[] f = {1, 0};
     // System.out.println(Arrays.compare(e, f));
     // 引数2番目で、数値の比較が可能となり、比較結果を出す
+
+    // 試した
+    // String[] a = {"apple"};
+    // String[] b = {"banana"};
+    // System.out.println(Arrays.compare(a, b));
 
 
     // 9-15
@@ -69,6 +87,16 @@ public class Main {
     // var list = Arrays.asList(array);
     // System.out.println(list);
     // list.add(9); // 変更不可
+
+    // 試した
+    // Integer[] array = {1, 2, 3};
+    // System.out.println(array);
+    // array.add(9); // 配列にaddメソッドは無い
+    // System.out.println(array);
+    // 結果エラー
+
+    // Integer[] array = new Integer[3];
+    // System.out.println(array[0]);
 
     // List<Integer> list = Arrays.asList(1, 2, 3);
     // System.out.println(list);
@@ -96,11 +124,29 @@ public class Main {
     //   System.out.println(str);
     // }
 
+    // 試した
+    // ArrayList<String> list = new ArrayList<>();
+    // list.add("A");
+    // list.add("B");
+    // list.add("C");
+    // list.add("D");
+    // list.add("E");
+    // for (String str : list) {
+    //   if ("D".equals(str)) {
+    //     list.remove(str);
+    //   }
+    // }
+    // for(String str : list) {
+    //   System.out.println(str);
+    // }
+    // 結果、出力成功
+
     // 9-12
     // ArrayList<String> list = new ArrayList<>();
     // list.add("A");
     // list.add("B");
     // list.add("C");
+    // // list.add("D"); // 左記を追加すると実行時例外エラー
     // for (String str : list) {
     //   if ("B".equals(str)) {
     //     list.remove(str);
@@ -116,6 +162,7 @@ public class Main {
     // list.add(new Item("B", 200));
     // list.add(new Item("C", 300));
     // list.add(new Item("A", 100));
+    // System.out.println(list); // 試した [Item@b7f23d9, Item@61d47554, Item@69b794e2, Item@3f200884]
     // list.remove(new Item("A", 100));
     // for (Item item : list) {
     //   System.out.println(item.getName());
@@ -152,7 +199,8 @@ public class Main {
     // for (Object obj : list) {
     //   System.out.print(obj);
     // }
-    // 警告の理由：ArrayListで型指定していないから、型安全性が脅かされる、<Object>追加でOK
+    // 警告の理由：ArrayListで型指定していないため、型安全性が脅かされる、<Object>追加でOK
+    // 例：ArrayList<Object> list = new ArrayList<>();
 
     // 9-7 ArrayListの説明で正しいものは
     // A. nullは扱えない
@@ -161,7 +209,7 @@ public class Main {
     // D. スレッドセーフではない
     // E. 値を追加する箇所を制御できる
 
-    // 試した AE
+    // 試した ACE
     // ArrayList<Integer> numbers = new ArrayList<>();
 
     //   // 要素を追加
@@ -182,22 +230,43 @@ public class Main {
 
     //   System.out.println("さらに新しい要素を挿入後のリスト: " + numbers);
 
+    //   // インデックス3（4番目の位置）に重複した要素50を挿入
+    //   numbers.add(3, 50);
+
+    //   System.out.println("重複した要素を挿入後のリスト: " + numbers);
+
     // 9-3
     // List<Integer> list = Arrays.asList(new Integer[] {1, 2, 3});
+    // // System.out.println(list);
     // // ここに実装して、321と出力したい、
-    // System.out.println(list);
-    // list.sort((a, b) -> a.compareTo(b));
-    // System.out.println(list);
+    // list.sort((a, b) -> -a.compareTo(b));
+    // // System.out.println(list);
+    // for (Integer num : list) {
+    //   System.out.println(num);
+    // }
+
+    // sortメソッド内でラムダ式が利用された場合に、Comparatorオブジェクトと解釈される
+
+    // 試した
+    // List<Integer> list = Arrays.asList(new Integer[] {1, 2, 3});
+    // Comparator<Integer> comparator = (a, b) -> -a.compareTo(b);
+    // list.sort(comparator);
     // for (Integer num : list) {
     //   System.out.println(num);
     // }
 
     // 試した
     // List<Integer> list = Arrays.asList(new Integer[] {1, 2, 3});
-    // System.out.println(list);
-    // // list.sort((a, b) -> a.compareTo(b));
-    // list.sort(1);
-    // System.out.println(list);
+    // Collections.sort(list, Collections.reverseOrder());
+    // // Collections.sort(list, -1); // これはエラー
+    // for (Integer num : list) {
+    //   System.out.println(num);
+    // }
+
+    // 試した
+    // List<Integer> list = Arrays.asList(new Integer[] {1, 2, 3});
+    // // System.out.println(list.get(0));
+    // list.sort(1); // nullだと成功、null以外ならラムダ式で
     // for (Integer num : list) {
     //   System.out.println(num);
     // }
