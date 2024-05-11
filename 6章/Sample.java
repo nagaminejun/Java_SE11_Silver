@@ -36,11 +36,15 @@ public class Sample {
   // }
 
   // 6-24 コンソールにOK.と出力するには
+  // public int num = 100; // 試した
+
   // public Sample() {
   //   // Sample(null, 0);
-  //   this(null, 0);
+  //   this(null, 0); // これが正解
   //   // super(null, 0);
-  //   this.Sample(null, 0);
+  //   // this.Sample(null, 0);
+  //   System.out.println(this); // 試した
+  //   System.out.println(this.num); // 試した
   // }
 
   // public Sample(String str, int num) {
@@ -51,6 +55,11 @@ public class Sample {
   // 試した
   // public void Sample(String str, int num) {
   //   System.out.println("一般メソッドで出力");
+  // }
+
+  // 試した
+  // public void test() {
+  //   System.out.println(this + " メソッド経由でthis()使って出力");
   // }
 
   // 6-23
@@ -79,6 +88,7 @@ public class Sample {
   // public Sample() {
   //   num = 100;
   // }
+
 
   // 試した、静的初期化、staticブロックの練習
   // static {
@@ -124,16 +134,20 @@ public class Sample {
   // { System.out.println("B"); } // この行がコンストラクタの前にある初期化ブロック
 
   // 6-20
-  // void Sample() {
+  // public void Sample() { // これはコンストラクタではなくメソッド
   //   System.out.println("hello.");
+  // }
+  // 試した
+  // public Sample() {
+  //   System.out.println("hello これはpublic Sample()");
   // }
 
   // 6-15
   // public void method(int num) {
   //   if (num < 0) return;
   //   System.out.println("A");
-  //   return;
-  //   System.out.println("B");
+  //   // return;
+  //   System.out.println("B"); // 到達不能な行のためコンパイルエラー
   // }
   // 結果 C System.out.println("B");がコンパイルエラー
 
@@ -201,6 +215,7 @@ public class Sample {
   // Static.staticNum = 10;
 
   // 6-5
-  // static int num = 0; // これはインスタンスフィールド、試して
+  // static int num = 0; // 教材では左記で記述あるがエラー。
+  // public static int num = 0;
   // int num2 = 0;
 }

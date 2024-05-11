@@ -58,6 +58,24 @@ public class Main {
     // System.out.println(str.replace("aa", "b"));
     // 結果　bb
 
+    // 試した replaceメソッドと、replaceAllメソッドの違い
+    // replace()
+    // String str = "Hello World!";
+    // String replacedStr = str.replace("World", "Java");
+    // System.out.println(replacedStr); // 出力: Hello Java!
+    // String str4 = "Hello World!";
+    // String replacedStr4 = str4.replace("\\d+", "456");
+    // System.out.println(replacedStr4); // 出力: Hello World!
+
+    // replaceAll()
+    // String str2 = "Hello World! 123";
+    // String replacedStr2 = str2.replaceAll("\\d+", "456");
+    // System.out.println(replacedStr2); // 出力: Hello World! 456
+    // String str3 = "Hello World! 123";
+    // String replacedStr3 = str3.replaceAll("World", "Java");
+    // System.out.println(replacedStr3); // 出力: Hello World! 456
+
+
     // 2-13
     // String str = "abcde";
     // System.out.println(str.substring(0, 0)); // 結果 なし

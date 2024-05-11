@@ -54,6 +54,9 @@ public class Main {
     // System.out.println(total);
     // 結果 コンパイル通るが、実行時エラー
     // nullを{}に置き換えると、出力成功。
+    // 試した
+    // System.out.println(array);
+    // System.out.println(array[1]);
 
     // 3次元配列の練習
     // String[][][] ren = new String[3][2][1];
@@ -92,7 +95,7 @@ public class Main {
 
 
     // 5-7 コンパイルエラーにならないのはどれ
-    // int[] a = new int[2];
+    // int[] a = new int[2]{2, 3};
     // int b[][] = {}; // 空配列の生成は可能
     // int[][] c = new int[][]{};
 
@@ -101,16 +104,21 @@ public class Main {
 
     // int e[];
     // e = { 2, 3 };
-    // 回答 BCD
+    // 回答
     /* BCDがコンパイルエラーになる実装はchatGPT履歴へ */
 
     // 試した
+    // int b[][] = {{}}; // 空配列の生成は可能
+    // int[][] c = new int[][]{{}};
     // int[] a = new int[2];
     // a[0] = 2;
     // a[1] = 3;　// 成功
 
+    // int[] a = {1, 2, 3}; // 左記は、int[] a = new int[]{1, 2, 3} と同文
+
     // int[][] d;
     // d = new int[][]{}; // 上述で宣言した多次元数を、new で「同じ数」大カッコで記述する
+    // d = new int[]{}; // これはエラー
 
 
     // int[] b = new int[2]{ 2, 3 }; // エラー
@@ -149,7 +157,7 @@ public class Main {
         at Main.main(Main.java:9) */
 
     // 5-4 コンパイルエラーになるのは、、
-    // int a[] = new int[2][3];
+    // int a[] = new int[2][3]; // a[][]ならOK
     // int[] b = new int[2.3];
     // int c[] = new int[2 * 3];
 
@@ -158,9 +166,10 @@ public class Main {
 
     // int[][] e = new int[2][]; // １次元側配列に指定あれば、２次元側に指定無しでもエラー起きない。
     // int f[][] = new int[][3]; // エラー。1次元側のインデックス指定は必須
-    // int[2][2] array = new int[2][2]; // エラー
     // 答え ABF
+
     // 試した
+    // int[2][2] array = new int[2][2]; // エラー
     // System.out.println(e[0][1]);
     // System.out.println(e[0]);
     // int[][] array = new int[3][]; // 2行だけが決定し、各行の列数はまだ未定

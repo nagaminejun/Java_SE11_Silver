@@ -27,6 +27,8 @@ public class Main {
 
     // 6-24
     // Sample s = new Sample();
+    // s.test(); // 試した
+    // System.out.println(s); // 試した
 
     // 6-23
     // Sample s = new Sample();
@@ -40,7 +42,7 @@ public class Main {
     // 結果 A
 
     // 6-22
-    // System.out.println(Sample.num);
+    // System.out.println(Sample.num); // 教材の問題、フィールドのデフォルト値(int)は 0
     // Sample s = new Sample();
     // System.out.println(Sample.num);
     // System.out.println(s.num);
@@ -62,9 +64,9 @@ public class Main {
     // コンストラクタ
 
     // 6-20
-    // Sample s = new Sample();
-    // s.Sample();
-    // 答え A hello. 出力される が、この環境では実行時エラー。Sample.java側で public 実装して、Aになる。
+    // Sample s = new Sample(); 
+    // s.Sample(); // これは「メソッド」を呼び出している。
+    // 答え A hello. 出力される 
 
     // 6-19 選択問題
     // 回答 D コンストラクタを修飾するアクセス修飾子に制限はない
@@ -87,7 +89,7 @@ public class Main {
     //   return (int) a + b;
     // }
     // 選択肢
-    // int calc(int a) {}
+    // int calc(int a); //{}
     // double calc(double a, int b) {}
     // int calc(double a, double b) {}
     // int calc(double num1, int num2) {}
@@ -145,12 +147,13 @@ public class Main {
     // String val = s.getValue(); // 戻り値を持つメソッドを利用して、値をMainクラスで受け取る。
     // System.out.println(val);
 
+
     // 6-10 メソッド宣言で正しいのは
-    // Void sample() {}
-    // void sample() { return "sample"; }
-    // sample() {}
-    // int sample() { return "sample"; }
-    // void sample() {}
+    // Void sample() {} // Void ×
+    // void sample() { return "sample"; } // `void`メソッドは戻り値を持たないため、`return "sample";`はエラー
+    // sample() {} // メソッドには必ず戻り値の型が必要。戻り値の型がないため、エラー。
+    // int sample() { return "sample"; } // 型不一致
+    // void sample() {} // 正解
 
 
     // 6-9
@@ -175,15 +178,15 @@ public class Main {
 
     // 6-5 コンパイル、実行結果は、
     // Sample.num = 10;
-    // System.out.println(Sample.num);
+    // // System.out.println(Sample.num);
     // Sample s = new Sample();
-    // System.out.println(s);
-    // System.out.println(Sample.num);
+    // // System.out.println(s);
+    // // System.out.println(Sample.num);
     // Sample s2 = new Sample();
-    // System.out.println(s2);
-    // System.out.println(Sample.num);
-    // s.num += 100;
-    // System.out.println(Sample.num);
+    // // System.out.println(s2);
+    // // System.out.println(Sample.num);
+    // s.num += 10;
+    // // System.out.println(Sample.num);
     // s2.num = 30;
     // System.out.println(s.num);
     // System.out.println(s2.num);
