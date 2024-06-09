@@ -39,16 +39,20 @@ public class Sample {
   // public int num = 100; // 試した
 
   // public Sample() {
-  //   // Sample(null, 0);
-  //   this(null, 0); // これが正解
-  //   // super(null, 0);
-  //   // this.Sample(null, 0);
-  //   System.out.println(this); // 試した
-  //   System.out.println(this.num); // 試した
+    // Sample(null, 0); // これはメソッドで呼べる。暗黙的なthisがある
+    // this(null, 0); // これが正解
+    // super(null, 0);
+    // this.Sample(null, 0); // これはメソッドで呼べる
+    // System.out.println(this); // 試した
+    // System.out.println(this.num); // 試した
   // }
 
   // public Sample(String str, int num) {
   //   System.out.println("コンストラクタで出力、ok.");
+  // }
+
+  // void Sample(String str, int num) { // 試したこれメソッド
+  //   System.out.println("メソッドで試した");
   // }
   // 答え B
 
@@ -71,6 +75,14 @@ public class Sample {
   // }
 
   // 試した
+  // {
+  //   System.out.println("A");
+  // }
+  // public Sample() {
+  //   System.out.println(" コンストラクタで出力");
+  // }
+
+  // 試した
   // public void Sample() {
   //   System.out.println("A");
   // }
@@ -80,10 +92,14 @@ public class Sample {
   // }
 
   // 6-22
-  // public static int num; // static 変数のデフォルト値 0
+  // public static int num; // 変数のデフォルト値 0
+  // static { // static初期化子試した
+  //   num += 10; // 初期化ブロック、インスタンス生成のタイミングで実行される
+  //   System.out.println(num + "  static初期化子！");
+  // }
   // {
   //   num = 10; // 初期化ブロック、インスタンス生成のタイミングで実行される
-  //   System.out.println(num);
+  //   System.out.println(num + "  インスタンス初期化子！");
   // }
   // public Sample() {
   //   num = 100;

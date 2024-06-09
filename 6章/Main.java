@@ -44,8 +44,15 @@ public class Main {
     // 6-22
     // System.out.println(Sample.num); // 教材の問題、フィールドのデフォルト値(int)は 0
     // Sample s = new Sample();
+
+    // // 試した
     // System.out.println(Sample.num);
-    // System.out.println(s.num);
+    // Sample s = new Sample(); // 10 // インスタンス生成で初期括弧が働き、10となる。
+    // System.out.println(Sample.num); // 100
+    // System.out.println(s.num); // 100
+    // Sample s2 = new Sample(); // 10 // インスタンス生成で初期括弧が働き、10となる。
+    // System.out.println(Sample.num);
+    // System.out.println(s2.num);
 
     // 6-21
     // Sample s = new sample();
@@ -88,7 +95,7 @@ public class Main {
     // int calc(double a, int b) {
     //   return (int) a + b;
     // }
-    // 選択肢
+
     // int calc(int a); //{}
     // double calc(double a, int b) {}
     // int calc(double a, double b) {}

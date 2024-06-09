@@ -108,6 +108,16 @@ public class Main {
     /* BCDがコンパイルエラーになる実装はchatGPT履歴へ */
 
     // 試した
+    // int e[];
+    // e = new int[]{}; // 成功
+    // System.out.println(e); // 成功
+
+    // int e[] = new int[]{};
+    // System.out.println(e); // 成功
+
+    // int e[];
+    // e = new int[]; // エラー
+    // System.out.println(e); // 初期化してないエラー
     // int b[][] = {{}}; // 空配列の生成は可能
     // int[][] c = new int[][]{{}};
     // int[] a = new int[2];
@@ -147,7 +157,6 @@ public class Main {
     // Item[] items = new Item[3];
     // int total = 0;
     // for (int i = 0; i < items.length; i++) {
-    //   items[i] = new Item();
     //   System.out.println(items[i]);
     //   total += items[i].price;
     // }

@@ -20,6 +20,17 @@ public class Main {
     // System.out.println(sb.length());
     // System.out.println(sb.capacity());
 
+    // 試した
+    // StringBuilder sb = new StringBuilder("a");
+    // System.out.println(sb.length());
+    // System.out.println(sb.capacity()); // 17
+    // sb.append("b");
+    // System.out.println(sb.length());
+    // System.out.println(sb.capacity()); // 17
+    // sb.append("ccccccccccccccccccccccccc");
+    // System.out.println(sb.length());
+    // System.out.println(sb.capacity()); // 36
+
     // 2-19
     // String str = null;
     // System.out.println(str);
@@ -135,13 +146,23 @@ public class Main {
 
     // 2-8
     // var a = new B();
-    // a = new C();
+    // a = new C(); // ここでコンパイルエラー 
     // a.test();
     // 結果
     // 2章/Main.java:103: エラー: 不適合な型: CをBに変換できません:
     //     a = new C();
     //         ^
     // エラー1個
+
+    // 試した
+    // B b = new B();
+    // b = new C(); // エラー
+    // b = new A();
+
+    /* 以下は、C extends B なら成り立つ */
+    // B a = new C(); // 初期化時に型変換
+    // a = new B();   // これは問題なく実行されます
+    // a.test();
 
     // 2-7
     // var name = "";
@@ -220,31 +241,35 @@ public class Main {
 
     // 2-6 コンパイルエラーにならないものは？
     // var a;
-    // var b = null;
+    // var b = null; // nullはインスタンス化できない、型推論も不可
     // var c = () -> {};
     // var d = {1, 2, 3}; // 適切な記述例は var d = new int[]{1, 2, 3}; 配列型の明示必要
     // var f = new ArrayList<>(); // <>がなければ、コンパイラがObject型をダイヤモンド演算子<>に代入する new ArrayList<Object>()
 
     // 試した
     // var a = 1;
+    // var b = String null;
     
   }
   // 2-10 
-  private static void hello(String msg) {
-    msg.replaceAll("hoge", "hello"); // ここで代入処理をしないと、書き換えられたオブジェクトを参照できない。例：msg = msg.replaceAll("hoge", "hello");
-    System.out.println(msg); // 再代入処理がされているなら、出力はhello, world.
-    // ここではmagという新規オブジェクトが生成されているが、再代入処理されていないため、結果はhoge, world.
-  }
+  // private static void hello(String msg) {
+  //   msg.replaceAll("hoge", "hello"); // ここで代入処理をしないと、書き換えられたオブジェクトを参照できない。例：msg = msg.replaceAll("hoge", "hello");
+  //   System.out.println(msg); // 再代入処理がされているなら、出力はhello, world.
+  //   // ここではmagという新規オブジェクトが生成されているが、再代入処理されていないため、結果はhoge, world.
+  // }
 
   // 2-10 試した①
   // private static String hello(String msg) { // void(戻り値を返す)を削除、メソッドの型指定も追加
+  //   System.out.println(msg.replaceAll("hoge", "hello") + " privateから ");
+  //   String test = msg.replaceAll("hoge", "hello");
+  //   System.out.println(test + " testインスタンスから");
   //   return msg.replaceAll("hoge", "hello"); // return文も必要、
   // }
 
   // 2-10 試した② メソッド内の新しいオブジェクトは、修正された文字列を表示できる。
-  // private static void hello(String msg) {
-  //   String msg2 =  msg.replaceAll("hoge", "hello");
-  //   System.out.println(msg2);
+  // private static void hello(String msg2) {
+  //   // String msg2 =  msg.replaceAll("hoge", "hello");
+  //   System.out.println(msg2 + " privateから");
   //   // 結果、hello, world.
   // }
 }

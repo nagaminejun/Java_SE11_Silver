@@ -40,6 +40,21 @@ public class B extends A {
 // 7-15
 // public class B implements A {}
 
+// 7-12
+// public class B extends A {
+//   String val = "B";
+
+//   // 以下二つは理解するために
+//   public void methodB() {
+//     System.out.println("Method in B");
+//   }
+
+//   @Override
+//   public void methodA() {
+//     System.out.println("Overridden method in B");
+//   }
+// }
+
 // 7-11
 // public class B extends A {
 //   public String val = "B";
@@ -82,9 +97,12 @@ public class B extends A {
 // // public interface B extends A {
 // // }
 
-// // 7-7
-// // public interface B {
-// //   default void test() {
-// //     System.out.println("B");
-// //   }
-// // }
+// 7-7
+// public interface B {
+//   default void test() {
+//     System.out.println("B");
+//   }
+// }
+
+// 7-4
+// public class B implements A {}

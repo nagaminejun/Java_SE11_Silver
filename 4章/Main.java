@@ -42,13 +42,12 @@ public class Main {
     // 4-14 出力結果は、
     // String[] array = {"A", "B"};
     // for (String a : array) {
-    //   // System.out.println("いちループ");
+    //   System.out.println("いちループ aの中は→" + a);
     //   for (String b : array) {
-    //     // System.out.print("　にループ　objの中は→");
-    //     // System.out.println(b);
+    //     System.out.println("  にループ  bの中は→" + b);
     //     if ("B".equals(b))
     //       break; // この処理を理解して
-    //     System.out.println(b);
+    //     System.out.println("結果、breakされずに出力  " + b); // ("B".equals(b))がtrueなら実行されない。
     //   }
     // }
     // AA
@@ -216,6 +215,14 @@ public class Main {
     //   while (true); // 無限ループ注意
       // 結果 コンパイルエラー！
 
+      // エラー解消し、試しにfalseでやってみる
+      // int a = 0;
+      // while (a < 5)
+      //   do {
+      //     a++;
+      //     System.out.println(a);
+      //   }
+      //   while (false);
 
     // 4-2
     // int a = 0;

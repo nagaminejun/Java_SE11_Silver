@@ -2,10 +2,11 @@ public class Sample {
 
   // 3-10  インスタンスの同値性に関する問題、オーバーロード
   // ** 問題点を認識して **
-  // private int num;
-  // public Sample(int num) {
-  //   this.num = num;
-  // }
+  private int num;
+  public Sample(int num) {
+    this.num = num;
+    System.out.println(this.num);
+  }
   // public boolean equals(Sample obj) { // (Sample obj)部分はオーバーロード
   //   System.out.println(this); // 問題理解のために記述、
   //   System.out.println(obj); // 出力されない理由を理解して

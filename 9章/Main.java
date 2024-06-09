@@ -47,9 +47,14 @@ public class Main {
     // System.out.println(numbers);
 
     // 9-16
-    // String[] a = {"B", "X"};
-    // String[] b = {"B", "A"};
-    // System.out.println(Arrays.compare(a, b));
+    // String[] a = {"B", "A"};
+    // String[] b = {"A", "B"};
+    // System.out.println(Arrays.compare(a, b)); // 1
+
+    // 試した
+    // String[] a = {"X", "A"};
+    // String[] b = {"A", "B"};
+    // System.out.println(Arrays.compare(a, b)); // 23
 
     // 試した
     // int[] c = {1};
@@ -66,20 +71,25 @@ public class Main {
     // 試した
     // String[] a = {"apple"};
     // String[] b = {"banana"};
-    // System.out.println(Arrays.compare(a, b));
+    // System.out.println(Arrays.compare(a, b)); // -1
 
 
     // 9-15
     // String[] a = {"b", "c"};
     // String[] b = {"a", "b", "c"};
     // System.out.println(Arrays.mismatch(a, b));
-    // 結果 0  0番目の要素がミスマッチ、最初に該当する要素のみ出力
+    // 結果 0  0番目の要素がミスマッチ、「最初に該当する要素のみ出力」
 
     // 試した
-    // String[] a = {"a", "c", "d"};
+    // String[] a = {"a", "b", "c"};
     // String[] b = {"a", "b", "c"};
     // System.out.println(Arrays.mismatch(a, b));
-    // 結果 1
+    // 該当ないので、出力は -1
+
+    // String[] a = {"a", "a", "c", "d"};
+    // String[] b = {"a", "a", "b", "c"};
+    // System.out.println(Arrays.mismatch(a, b));
+    // 結果 2
 
 
     // 9-14 試した
@@ -89,6 +99,10 @@ public class Main {
     // list.add(9); // 変更不可
 
     // 試した
+    // var list = Arrays.asList(new Integer[] {1, 2, 3});
+    // list.set(1, 100);
+    // System.out.println(list);
+
     // Integer[] array = {1, 2, 3};
     // System.out.println(array);
     // array.add(9); // 配列にaddメソッドは無い

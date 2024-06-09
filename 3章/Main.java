@@ -169,6 +169,12 @@ public class Main {
     // }
     // System.out.println("B");
 
+    // 試した
+    // if (true)
+    // System.out.println("A");
+    // System.out.println("B");
+    // AB
+
 
     // 3-15
     // int num = 10;
@@ -182,7 +188,11 @@ public class Main {
     // String a = "abc";
     // String b = new String(a);
     // int count = 0;
-    // // System.out.println(a.intern()); //abc
+    // System.out.println(a.intern()); // 試した abc
+    // System.out.println(b); // 試した abc
+    // System.out.println(a == b); // 試した false
+    // System.out.println(a.intern() == b); // 試した false
+    // System.out.println(a.intern() == b.intern()); // 試した true
     // if (a.intern() == "abc") {
     //   count++;
     // }
@@ -203,12 +213,13 @@ public class Main {
     // System.out.println(str1.intern() == str2.intern()); // 結果 true internメソッドがメモリ内の文字列("java")を参照しているから。str1やstr2のオブジェクトではない。
 
     // 3-13 コンスタントプール、文字列プール
-    // String a = new String("sample");
-    // String b = "sample";
-    // System.out.print(a == b);
-    // System.out.print(", ");
-    // System.out.print(a.equals(b));
-    // System.out.print(", ");
+    String a = new String("sample");
+    String b = "sample";
+    String c = new String("sample");
+    System.out.print(a == c);
+    System.out.print(", ");
+    System.out.print(a.equals(c));
+    System.out.print(", ");
     // 結果 false, true,
 
     // // 試した
@@ -235,12 +246,25 @@ public class Main {
     // System.out.print(", ");
     // 結果 true, true,
 
+    // 試した
+    // System.out.println(a);
+    // System.out.println(b);
+    // sample sample
+
     // 3-11
     // Object a = new Object();
     // Object b = null;
     // System.out.println(a.equals(b));
 
     // 以下を試した
+    // Object a = new Object();
+    // Object b = "";
+    // System.out.println(a.equals(b)); // false
+
+    // System.out.println(a);
+    // System.out.println(b);
+    // System.out.println(a.length());
+
     // Sample a = new Object();
     // Sample b = new Object();
     // System.out.println(a.equals(b));
@@ -273,10 +297,19 @@ public class Main {
     // 3-9 equalsメソッドのオーバーライド
     // Sample a = new Sample(10, "a");
     // Sample b = new Sample(10, "b");
-    // System.out.print(a == b);
-    // System.out.println(" (a == b)の結果");
-    // System.out.print(a.equals(b));
+    // System.out.println((a == b) + " (a == b)の結果");
+    // System.out.print((a.equals(b)) + " (a.equals(b)の結果");
     // equalsメソッドのデフォルトでは、this.equals(obj)
+
+    // 試した
+    // Sample a = new Sample(10);
+    // Sample b = new Sample(10);
+    // System.out.println((a == b) + " (a == b)の結果");
+    // System.out.println((a.equals(b)) + " (a.equals(b)の結果");
+
+    // int aa = 1;
+    // int bb = 1;
+    // System.out.println(aa == bb);
 
     // 3-8 
     // 適切なディレクトリで実行して。
@@ -329,6 +362,18 @@ public class Main {
     // int f = ++e; //
     // System.out.println(f); // 結果 11
     // System.out.println(e); // 結果 11
+
+    // 計算練習用
+    // int b = a++; // 10
+    // int b = a++ + a; // 21
+    // int b = a++ + a + a--; // 32
+    // int b = a++ + a + a-- - a--; // 22
+    // int b = a++ + a + a-- - a-- + ++a; // 32
+    // System.out.println(b);
+    // System.out.println(a);
+    // System.out.println(a++);
+    // System.out.println(a);
+    // System.out.println(a++ + a);
 
     // 試した
     // System.out.println(a);

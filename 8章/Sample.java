@@ -4,8 +4,8 @@ public class Sample {
     // 8-4
     // int cnt = 0;
     // Runnable r = () -> {
-    //   for (cnt = 0; cnt < 10; cnt++) {エラー: ラムダ式から参照されるローカル変数は、finalまたは事実上のfinalである必要があります
-    //     System.out.println(cnt++);エラー: ラムダ式から参照されるローカル変数は、finalまたは事実上のfinalである必要があります
+    //   for (cnt = 0; cnt < 10; cnt++) { //エラー: ラムダ式から参照されるローカル変数は、finalまたは事実上のfinalである必要があります
+    //     System.out.println(cnt++); //エラー: ラムダ式から参照されるローカル変数は、finalまたは事実上のfinalである必要があります
     //   }
     // };
     // new Thread(r).start();

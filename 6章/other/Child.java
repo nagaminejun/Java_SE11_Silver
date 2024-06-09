@@ -7,7 +7,7 @@ public class Child extends Parent {
 
     // System.out.println(num); // コンパイルエラー、教材のコードだと、継承元（親）フィールドが非静的だとアクセス不可。
 
-    // System.out.println(Parent.num); // test
+    System.out.println(Parent.num); // test
     // Parent parent = new Parent();
     // System.out.println(parent.num);  // インスタンスを通じてフィールドにアクセス
 

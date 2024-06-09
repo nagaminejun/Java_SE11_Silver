@@ -39,7 +39,9 @@ public class Main {
 
     // 7-17
     // A a = new A();
-    // B b = (B) a;
+    // B b = (B) a; // 実行時エラー
+    // B b = (C) a; // 試した、コンパイルエラーでた。
+    // A b = (A) a; // 試した、エラーなし
     // b.hello();
     // 結果、実行時エラー
     // Exception in thread "main" java.lang.ClassCastException: class A cannot be cast to class B (A and B are in unnamed module of loader 'app')
@@ -84,9 +86,10 @@ public class Main {
     // Worker a = new Engineer();
     // Employee b = new Engineer();
     // Engineer c = new Engineer();
-    // a.create();
+    // a.create(); // 7-12でメモした内容見て
     // b.work();
     // c.report();
+    // 答え、a.create();でエラー、参照先の型Workerにcreate()ない
 
     // 試した、a.create();を機能させるためには
     // Engineer.javaにimplements Workerを追加、
@@ -96,7 +99,7 @@ public class Main {
     // Worker worker = new Engineer();
     // worker.work();
 
-    // 7-11
+    // 7-12
     // A a = new A();
     // A b = new B();
     // System.out.print(a.val);
@@ -107,7 +110,8 @@ public class Main {
     // A b = new B();のアップキャストを理解するために
     // A b = new B();
     // A b = new B();
-    // b.methodA();
+    // a.methodA();
+    // b.methodA();  // "Overridden method in B" が出力される
     // b.methodC();
     // b.methodB(); // // コンパイルエラー: methodB() は A のメンバではない、もし呼び出したい場合はキャストする
     // ((B) b).methodB();
@@ -158,8 +162,8 @@ public class Main {
 // // public class Main implements A {
 
 // // 解決案2 A,Bの指定はそのままに、Mainクラス内でtest()をオーバーライドし、AかBどちらのtest()を呼び出すか指定する
-//   @Override
-//   public void test() {
-//     A.super.test();  // Aのdefaultメソッドを呼び出す
-//   }
+//   // @Override
+//   // public void test() {
+//   //   A.super.test();  // Aのdefaultメソッドを呼び出す
+//   // }
 // }
